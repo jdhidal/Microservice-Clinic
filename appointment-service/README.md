@@ -41,7 +41,7 @@ To run the server locally, follow these steps:
     npm run start
     ```
 
-3. Open your browser and navigate to [http://localhost:5002/appointments](http://localhost:5002/appointments).
+3. Open your browser and navigate to [http://localhost:5003/appointments](http://localhost:5003/appointments).
 4. We open a new terminal and place the following CURL
     ``` sh
     $headers = @{
