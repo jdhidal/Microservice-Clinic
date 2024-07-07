@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  doctor-service:
+    build: ./doctor-service
+    ports:
+      - "5001:5001"
+
+  patient-service:
+    build: ./patient-service
+    ports:
+      - "5002:5002"
+
+  appointment-service:
+    build: ./appointment-service
+    ports:
+      - "5003:5003"
