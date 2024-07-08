@@ -21,13 +21,13 @@ jobs:
         
     - name: Build up Dockers
       run: |
-        services=("clinic-doctor" "patient-service" "appointment-service")
+        services=("doctor-service" "patient-service" "appointment-service")
         
         for service in "${services[@]}"
         do
           if [ -d "$service" ]; then
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest ./$service
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:1.0
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest
           else
             echo "Failed to find the path of directory of service $service"
             exit 1
