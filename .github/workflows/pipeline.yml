@@ -21,7 +21,7 @@ jobs:
         
     - name: Build up Dockers
       run: |
-        services=("doctor-service" "patient-service" "appointment-service")
+        services=("clinic-doctor" "patient-service" "appointment-service")
         
         for service in "${services[@]}"
         do
