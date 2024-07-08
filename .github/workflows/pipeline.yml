@@ -2,7 +2,7 @@ name: Build and Push Docker Images
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build-and-push:
@@ -21,13 +21,13 @@ jobs:
         
     - name: Build up Dockers
       run: |
-        services=("registration-service" "login-service" "update-service")
+        services=("doctor-service" "patient-service" "appointment-service")
         
         for service in "${services[@]}"
         do
           if [ -d "$service" ]; then
             docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest ./$service
-            docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:latest
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/$service:1.0
           else
             echo "Failed to find the path of directory of service $service"
             exit 1
@@ -36,14 +36,14 @@ jobs:
 
     - name: Paths of docker-compose
       run: |
-        sed -i 's|build: \./|build: ../|g' ./docker/docker-compose.yml
+        sed -i 's|build: \./|build: ../|g' ./docker-compose.yml
         echo "Content Updated of docker-compose.yml:"
-        cat ./docker/docker-compose.yml
+        cat ./docker-compose.yml
 
     - name: Clean up previous containers
       run: |
-        docker-compose -f ./docker/docker-compose.yml down
+        docker-compose -f ./docker-compose.yml down
 
     - name: Execute Docker Compose
       run: |
-        docker-compose -f ./docker/docker-compose.yml up -d
+        docker-compose -f ./docker-compose.yml up -d
