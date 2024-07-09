@@ -18,7 +18,7 @@ app.post('/patients', (req, res) => {
 
 app.get('/patients', (req, res) => {
   const response = {
-    title: "Lista de Pacientes",
+    title: "Patient List",
     data: patients
   };
   res.json(response);

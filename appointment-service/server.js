@@ -16,7 +16,11 @@ app.post('/appointments', (req, res) => {
 });
 
 app.get('/appointments', (req, res) => {
-    res.json(appointments);
+  const response = {
+    title: "Reservation List",
+    data: appointments
+  };
+  res.json(response);
 });
 
 
