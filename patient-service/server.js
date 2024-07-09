@@ -17,7 +17,11 @@ app.post('/patients', (req, res) => {
 
 
 app.get('/patients', (req, res) => {
-    res.json(patients);
+  const response = {
+    title: "Lista de Pacientes",
+    data: patients
+  };
+  res.json(response);
 });
 
 
