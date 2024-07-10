@@ -8,7 +8,8 @@ const doctors = [
   { id: 3, name: 'Dr. Kevin', specialty: 'Ginecology' },
   { id: 4, name: 'Dr. Ariel', specialty: 'CR7' },
   { id: 5, name: 'Dra. Pazmiño', specialty: 'Radiology' },
-  { id: 6, name: 'Dr. Esponga', specialty: 'Radiology' }
+  { id: 6, name: 'Dr. Esponga', specialty: 'Radiology' },
+  { id: 7, name: 'Dr. Estrella', specialty: 'Cardiology' }
 ];
 
 app.get('/doctors', (req, res) => {
