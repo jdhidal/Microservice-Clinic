@@ -1,4 +1,8 @@
-project members: 
+# Microservice Clinic
+
+The problem is having a separate clinical task system in microservices, this project separates the appointment service, doctors and patients, so if a change is made the other services are not affected.
+
+## project members: 
 Diego Hidalgo ,
 Kevin Guaña
 ## Requirements
